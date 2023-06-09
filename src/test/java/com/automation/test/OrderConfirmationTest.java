@@ -1,5 +1,6 @@
 package com.automation.test;
 
+import com.automation.utils.ConfigReader;
 import org.testng.annotations.Test;
 
 public class OrderConfirmationTest extends BaseTest {
@@ -7,7 +8,7 @@ public class OrderConfirmationTest extends BaseTest {
     @Test
     public void orderConfirmation() {
 
-        loginPage.doLogin("standard_user","secret_sauce");
+        loginPage.doLogin(ConfigReader.getProperty("login.username"), ConfigReader.getProperty("login.password"));
         homePage.clickOnAddToCartOfFirstProduct();
         homePage.clickOnIcon();
         cartPage.clickOnCheckoutBtn();

@@ -1,6 +1,8 @@
 package com.automation.test;
 
 import com.automation.pages.LoginPage;
+import com.automation.utils.ConfigReader;
+import jdk.nashorn.internal.runtime.regexp.joni.Config;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -9,7 +11,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void verifyUserCanLogin() {
-        loginPage.doLogin("standard_user","secret_sauce");
+        loginPage.doLogin(ConfigReader.getProperty("login.username"), ConfigReader.getProperty("login.password"));
     }
 
     @Test

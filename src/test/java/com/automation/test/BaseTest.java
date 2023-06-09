@@ -1,6 +1,7 @@
 package com.automation.test;
 
 import com.automation.pages.*;
+import com.automation.utils.ConfigReader;
 import com.automation.utils.DriverUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,6 +22,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp() {
+        ConfigReader.initProperties();
         // Create the driver
         DriverUtils.createDriver();
 

@@ -16,13 +16,14 @@ public class DriverUtils {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(300));
 
-        driver.get("https://www.saucedemo.com/");
+        driver.get(ConfigReader.getProperty("application.rlu"));
 
     }
 
 
     // getter
     public static WebDriver getDriver () {
+
         return driver;
     }
 }
