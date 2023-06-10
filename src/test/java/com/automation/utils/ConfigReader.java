@@ -9,6 +9,7 @@ public class ConfigReader {
     static Properties prop;
 
     public static void initProperties() {
+
         try {
             prop = new Properties();
             prop.load(new FileReader("src/test/resources/config/config.properties"));

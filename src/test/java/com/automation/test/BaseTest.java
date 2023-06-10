@@ -22,8 +22,10 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp() {
+        // 1. call property method
         ConfigReader.initProperties();
-        // Create the driver
+
+        // 2. Create the driver
         DriverUtils.createDriver();
 
         // Initialize the page object

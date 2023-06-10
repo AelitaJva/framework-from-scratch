@@ -16,7 +16,7 @@ public class DriverUtils {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(300));
 
-        driver.get(ConfigReader.getProperty("application.rlu"));
+        driver.get(ConfigReader.getProperty("application.url"));
 
     }
 
