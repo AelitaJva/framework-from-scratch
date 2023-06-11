@@ -12,11 +12,23 @@ public class LoginTest extends BaseTest {
     @Test
     public void verifyUserCanLogin() {
         loginPage.doLogin(ConfigReader.getProperty("login.username"), ConfigReader.getProperty("login.password"));
+        // validate second page it displayed after login
+        homePage.verifyHomePage();
     }
 
     @Test
     public void verifyUserCanNotLoginWithInvalidCredentials () {
         loginPage.doLogin("admin", "admin123");
         loginPage.verifyInvalidLoginErrorIsDisplayed();
+    }
+
+    @Test
+    public void verifyUserCanLogout () {
+        loginPage.doLogin(ConfigReader.getProperty("login.username"), ConfigReader.getProperty("login.password"));
+        // validate second page it displayed after login
+        homePage.verifyHomePage();
+        homePage.clickOnHamburgerIcon();
+        homePage.clickOnLogoutLink();
+        loginPage.verifyLoginPage();
     }
 }
